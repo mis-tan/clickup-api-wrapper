@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: clickup-api-wrapper
+    runtime: node
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: CLICKUP_API_TOKEN
+        sync: false
+      - key: CLICKUP_LIST_ID
+        value: "901817737823"
